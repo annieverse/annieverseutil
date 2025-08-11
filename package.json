@@ -1,0 +1,24 @@
+{
+  "name": "annieverseutil",
+  "version": "0.0.1",
+  "description": "A repo designed to house all util functionality for discord bot Annie",
+  "license": "MIT",
+  "author": "thefryignpan",
+  "type": "commonjs",
+  "main": "index.js",
+  "private": false,
+  "engines": {
+    "node": ">=24.4.1",
+    "npm": "^11.4.2"
+  },
+  "scripts": {
+    "test": "npm run jest"
+  },
+  "contributors": [
+    "Naph (https://github.com/klerikdust)",
+    "Pan (https://github.com/Moore2021)"
+  ],
+  "dependencies": {
+    "got": "^14.4.7"
+  }
+}
