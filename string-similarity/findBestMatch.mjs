@@ -1,5 +1,5 @@
 "use strict";
-import { compareTwoStrings } from "./compareTwoStrings";
+import { compareTwoStrings } from "./compareTwoStrings.mjs";
 
 /**
  * This function checks if the arguments passed to the `findBestMatch` function are valid.

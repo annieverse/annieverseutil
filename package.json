@@ -7,9 +7,19 @@
   "type": "commonjs",
   "main": "index.js",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annieverse/annieverseUtil.git"
+  },
   "engines": {
     "node": ">=24.4.1",
     "npm": "^11.4.2"
+  },
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.cjs"
+    }
   },
   "scripts": {
     "test": "npm run jest"

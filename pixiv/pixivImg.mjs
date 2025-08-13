@@ -1,7 +1,7 @@
 "use strict";
-const path = require('path');
-const fs = require('fs');
-const got = require('got');
+import path from 'path';
+import fs from 'fs';
+import got from 'got';
 
 /**
  * Downloads an image from a given URL and saves it to the specified output path.
