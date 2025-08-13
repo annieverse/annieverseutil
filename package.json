@@ -9,7 +9,7 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/annieverse/annieverseUtil.git"
+    "url": "git+https://github.com/annieverse/annieverseutil.git"
   },
   "engines": {
     "node": ">=24.4.1",
