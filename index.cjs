@@ -1,6 +1,5 @@
 "use strict";
-const findBestMatch = require("./string-similarity/findBestMatch.cjs");
-const compareTwoStrings = require("./string-similarity/compareTwoStrings.cjs");
+const { findBestMatch, compareTwoStrings } = require("./string-similarity/findBestMatch.cjs");
 const downloadPixivImage = require("./pixiv/pixivImg.cjs");
 
 

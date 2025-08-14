@@ -1,8 +1,8 @@
 "use strict";
-import { findBestMatch } from "./string-similarity/findBestMatch.mjs";
-import { compareTwoStrings } from "./string-similarity/compareTwoStrings.mjs";
+import { findBestMatch, compareTwoStrings } from "./string-similarity/findBestMatch.mjs";
 import { downloadPixivImage } from "./pixiv/pixivImg.mjs";
 
-export const stringSimilarity = { compareTwoStrings, findBestMatch };
-export const pixiv = { downloadPixivImage };
+const stringSimilarity = { compareTwoStrings, findBestMatch };
+const pixiv = { downloadPixivImage };
 
+export { stringSimilarity, pixiv };

@@ -1,5 +1,4 @@
 "use strict";
-const { compareTwoStrings } = require("./compareTwoStrings.cjs");
 
 /**
  * This function checks if the arguments passed to the `findBestMatch` function are valid.
@@ -43,6 +42,51 @@ class InvalidArgumentException extends Error {
 }
 
 /**
+ * @function compareTwoStrings
+ * @description This function compares two strings and returns a similarity score between 0 and 1 both inclusive, indicating how similar the strings are.
+ * @param {string} first 
+ * @param {string} second 
+ * @returns {number} 
+ * @throws {InvalidArgumentException} if the arguments are not valid.
+ */
+function compareTwoStrings(first, second) {
+
+    if (typeof first !== 'string') throw new InvalidArgumentException('Bad arguments: First argument should be a string');
+    if (typeof second !== 'string') throw new InvalidArgumentException('Bad arguments: Second argument should be a string');
+
+    first = first.replace(/\s+/g, '');
+    second = second.replace(/\s+/g, '');
+
+    if (first === second) return 1; // identical or empty
+    if (first.length < 2 || second.length < 2) return 0; // if either is a 0-letter or 1-letter string
+
+    let firstBigrams = new Map();
+    for (let i = 0; i < first.length - 1; i++) {
+        const bigram = first.substring(i, i + 2);
+        const count = firstBigrams.has(bigram)
+            ? firstBigrams.get(bigram) + 1
+            : 1;
+
+        firstBigrams.set(bigram, count);
+    };
+
+    let intersectionSize = 0;
+    for (let i = 0; i < second.length - 1; i++) {
+        const bigram = second.substring(i, i + 2);
+        const count = firstBigrams.has(bigram)
+            ? firstBigrams.get(bigram)
+            : 0;
+
+        if (count > 0) {
+            firstBigrams.set(bigram, count - 1);
+            intersectionSize++;
+        }
+    }
+
+    return (2.0 * intersectionSize) / (first.length + second.length - 2);
+}
+
+/**
  * The best Match object nested in the returned object from the `findBestMatch` function.
  * @typedef {object} bestMatch
  * @property {string} target - The target string that is the best match.
@@ -66,7 +110,7 @@ class InvalidArgumentException extends Error {
  * @returns {foundBestMatchResult}
  * @throws {InvalidArgumentException} if the arguments are not valid.
  */
-module.exports = function findBestMatch(mainString, targetStrings) {
+function findBestMatch(mainString, targetStrings) {
     if (!areArgsValid(mainString, targetStrings)) throw new InvalidArgumentException('Bad arguments: First argument should be a string, second should be an array of strings');
 
     const ratings = [];
@@ -85,3 +129,5 @@ module.exports = function findBestMatch(mainString, targetStrings) {
 
     return { ratings: ratings, bestMatch: bestMatch, bestMatchIndex: bestMatchIndex };
 }
+
+module.exports = { findBestMatch, compareTwoStrings };

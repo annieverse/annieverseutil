@@ -22,7 +22,9 @@
     }
   },
   "scripts": {
-    "test": "npm run jest"
+    "test": "jest",
+    "jest": "jest",
+    "jest:coverage": "jest --coverage"
   },
   "contributors": [
     "Naph (https://github.com/klerikdust)",
@@ -30,5 +32,9 @@
   ],
   "dependencies": {
     "got": "^14.4.7"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.0.5"
   }
 }

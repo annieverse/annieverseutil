@@ -1,7 +1,8 @@
 "use strict";
 const path = require('path');
 const fs = require('fs');
-const got = require('got');
+
+
 
 /**
  * Downloads an image from a given URL and saves it to the specified output path.
@@ -11,28 +12,36 @@ const got = require('got');
  * @returns {Promise<string>} - Resolves with the output file path if successful, rejects with an error if not.
  * @throws {TypeError} - If imgUrl is not a string.
  */
-module.exports = function downloadPixivImage(imgUrl, output) {
-    return new Promise((resolve, reject) => {
-        if (typeof imgUrl !== 'string') {
-            reject(new TypeError('Expected a string'));
+module.exports = async function downloadPixivImage(imgUrl, output) {
+    if (typeof imgUrl !== 'string' || typeof output !== 'string') {
+        throw new TypeError('Expected a string');
+    }
+
+    output = output || path.basename(imgUrl);
+
+    const options = {
+        encoding: null,
+        headers: {
+            Referer: 'http://www.pixiv.net/'
+        }
+    };
+
+    try {
+        const response = await fetch(imgUrl, options);
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch image: ${response.statusText}`);
         }
 
-        output = output || path.basename(imgUrl);
+        const fileStream = fs.createWriteStream(output);
+        response.body.pipe(fileStream);
 
-        const options = {
-            encoding: null,
-            headers: {
-                Referer: 'http://www.pixiv.net/'
-            }
-        };
-
-        const gotStream = got.stream(imgUrl, options);
-        gotStream.on('error', err => {
-            reject(err);
+        return new Promise((resolve, reject) => {
+            fileStream.on('finish', resolve);
+            fileStream.on('error', reject);
         });
-
-        gotStream.pipe(fs.createWriteStream(output)).on('close', () => {
-            resolve(output);
-        });
-    });
+    } catch (error) {
+        console.error('Error downloading image:', error);
+        throw error;
+    }
 }

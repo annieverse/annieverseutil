@@ -1,0 +1,15 @@
+{
+    "typeAcquisition": {
+        "enable": true
+    },
+    "compilerOptions": {
+        "types": [
+            "jest"
+        ]
+    },
+    "include": [
+        "**/*.js",
+        "**/*.cjs",
+        "**/*.mjs"
+    ]
+}
