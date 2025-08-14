@@ -138,3 +138,6 @@ dist
 
 #Test Directory
 testDirectory/
+
+#docs
+docs/
