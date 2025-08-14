@@ -30,9 +30,6 @@
     "Naph (https://github.com/klerikdust)",
     "Pan (https://github.com/Moore2021)"
   ],
-  "dependencies": {
-    "got": "^14.4.7"
-  },
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "jest": "^30.0.5"
