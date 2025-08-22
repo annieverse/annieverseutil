@@ -2,8 +2,6 @@
 const path = require('path');
 const fs = require('fs');
 
-
-
 /**
  * Downloads an image from a given URL and saves it to the specified output path.
  * @function downloadPixivImage
@@ -12,7 +10,7 @@ const fs = require('fs');
  * @returns {Promise<string>} - Resolves with the output file path if successful, rejects with an error if not.
  * @throws {TypeError} - If imgUrl is not a string.
  */
-module.exports = async function downloadPixivImage(imgUrl, output) {
+async function downloadPixivImage(imgUrl, output) {
     if (typeof imgUrl !== 'string' || typeof output !== 'string') {
         throw new TypeError('Expected a string');
     }
@@ -45,3 +43,5 @@ module.exports = async function downloadPixivImage(imgUrl, output) {
         throw error;
     }
 }
+
+module.exports = { downloadPixivImage }

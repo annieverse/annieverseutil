@@ -130,3 +130,4 @@ export function findBestMatch(mainString, targetStrings) {
     return { ratings: ratings, bestMatch: bestMatch, bestMatchIndex: bestMatchIndex };
 }
 
+export default findBestMatch;

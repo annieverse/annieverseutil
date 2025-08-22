@@ -43,3 +43,5 @@ export async function downloadPixivImage(imgUrl, output) {
         throw error;
     }
 }
+
+export default downloadPixivImage;
