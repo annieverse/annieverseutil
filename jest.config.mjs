@@ -1,6 +1,6 @@
 export default {
     // Specify test environment
-    testEnvironment: 'node',
+    testEnvironment: `node`,
     // Optionally, specify test file patterns
     testMatch: [
         `**/__tests__/**/*.js`,

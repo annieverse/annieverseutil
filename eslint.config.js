@@ -14,7 +14,6 @@ export default defineConfig([
         },
         plugins: { jsdoc: jsdoc, '@stylistic': stylistic },
         rules: {
-            camelcase: [`error`, { properties: `always` }],
             "getter-return": `error`,
             "no-mixed-spaces-and-tabs": `off`,
             "no-irregular-whitespace": `off`,

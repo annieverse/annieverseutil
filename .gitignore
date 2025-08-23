@@ -141,4 +141,5 @@ testDirectory/
 
 #docs
 docs/
-Backup/
+.backup/
+.vscode/
