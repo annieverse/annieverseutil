@@ -1,0 +1,15 @@
+// tsconfig.esm.json
+{
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+        "module": "esnext",
+        "outDir": "./dist/esm",
+        "declarationDir": "./dist/esm/types"
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

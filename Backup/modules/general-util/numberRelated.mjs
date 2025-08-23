@@ -6,7 +6,7 @@
  * @returns {?element}
  */
 function closestBelow(array = [], val = 1) {
-    return Math.max.apply(null, array.filter((v) => v <= val))
+    return Math.max.apply(null, array.filter((v) => v <= val));
 }
 
 /**
@@ -16,8 +16,8 @@ function closestBelow(array = [], val = 1) {
  *  @returns {string}
  */
 function commanifier(number = 0, roundUp = true) {
-    if (roundUp) number = Math.round(number)
-    return number ? number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, `,`) : 0
+    if (roundUp) number = Math.round(number);
+    return number ? number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, `,`) : 0;
 }
 
 /**
@@ -25,7 +25,7 @@ function commanifier(number = 0, roundUp = true) {
  * @param {number} [num=0] the target number
  */
 function formatK(num = 0) {
-    return !num ? 0 : (num > 999999 ? (num / 1000000).toFixed(1) + `M` : num > 999 ? (num / 1000).toFixed(1) + `k` : num)
+    return !num ? 0 : (num > 999999 ? (num / 1000000).toFixed(1) + `M` : num > 999 ? (num / 1000).toFixed(1) + `k` : num);
 }
 
 /**
@@ -34,8 +34,8 @@ function formatK(num = 0) {
  * @return {number}
  */
 function getNumberInRange(range) {
-    const [min, max] = range
-    return Math.floor(Math.random() * (max - min + 1) + min)
+    const [min, max] = range;
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 
@@ -45,7 +45,7 @@ function getNumberInRange(range) {
  * @return {*}
  */
 function random(src = []) {
-    return src[Math.floor(Math.random() * src.length)]
+    return src[Math.floor(Math.random() * src.length)];
 }
 
 /**
@@ -56,6 +56,6 @@ function random(src = []) {
  */
 function trueInt(str = ``) {
     return (!Number.isNaN(Number(str)) && !(Math.round(Number(str)) <= 0) && Number.isFinite(Number(str)))
-        ? Math.round(Number(str)) : NaN
+        ? Math.round(Number(str)) : NaN;
 }
-export { closestBelow, commanifier, formatK, getNumberInRange, random, trueInt }
+export { closestBelow, commanifier, formatK, getNumberInRange, random, trueInt };

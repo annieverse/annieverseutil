@@ -1,6 +1,6 @@
 "use strict";
-const path = require('path');
-const fs = require('fs');
+const path = require(`path`);
+const fs = require(`fs`);
 
 /**
  * Downloads an image from a given URL and saves it to the specified output path.
@@ -11,8 +11,8 @@ const fs = require('fs');
  * @throws {TypeError} - If imgUrl is not a string.
  */
 async function downloadPixivImage(imgUrl, output) {
-    if (typeof imgUrl !== 'string' || typeof output !== 'string') {
-        throw new TypeError('Expected a string');
+    if (typeof imgUrl !== `string` || typeof output !== `string`) {
+        throw new TypeError(`Expected a string`);
     }
 
     output = output || path.basename(imgUrl);
@@ -20,7 +20,7 @@ async function downloadPixivImage(imgUrl, output) {
     const options = {
         encoding: null,
         headers: {
-            Referer: 'http://www.pixiv.net/'
+            Referer: `http://www.pixiv.net/`
         }
     };
 
@@ -35,13 +35,13 @@ async function downloadPixivImage(imgUrl, output) {
         response.body.pipe(fileStream);
 
         return new Promise((resolve, reject) => {
-            fileStream.on('finish', resolve);
-            fileStream.on('error', reject);
+            fileStream.on(`finish`, resolve);
+            fileStream.on(`error`, reject);
         });
     } catch (error) {
-        console.error('Error downloading image:', error);
+        console.error(`Error downloading image:`, error);
         throw error;
     }
 }
 
-module.exports = { downloadPixivImage }
+module.exports = { downloadPixivImage };

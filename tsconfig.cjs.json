@@ -1,0 +1,14 @@
+// tsconfig.cjs.json
+{
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+        "module": "commonjs",
+        "outDir": "./dist/cjs" // Output CJS files to a dedicated directory
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

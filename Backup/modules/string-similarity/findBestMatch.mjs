@@ -9,10 +9,10 @@
  * @returns {boolean}
  */
 function areArgsValid(mainString, targetStrings) {
-    if (typeof mainString !== 'string') return false;
+    if (typeof mainString !== `string`) return false;
     if (!Array.isArray(targetStrings)) return false;
     if (!targetStrings.length) return false;
-    if (targetStrings.find(function (s) { return typeof s !== 'string'; })) return false;
+    if (targetStrings.find(function (s) { return typeof s !== `string`; })) return false;
     return true;
 }
 
@@ -30,7 +30,7 @@ class InvalidArgumentException extends Error {
      */
     constructor (message) {
         super(message);
-        this.name = 'InvalidArgumentException';
+        this.name = `InvalidArgumentException`;
         this.message = message;
         if (Error.captureStackTrace) {
             Error.captureStackTrace(this, InvalidArgumentException);
@@ -47,15 +47,14 @@ class InvalidArgumentException extends Error {
  * @param {string} first 
  * @param {string} second 
  * @returns {number} 
- * @throws {InvalidArgumentException} if the arguments are not valid.
  */
-function compareTwoStrings(first, second) {
+export function compareTwoStrings(first, second) {
 
-    if (typeof first !== 'string') throw new InvalidArgumentException('Bad arguments: First argument should be a string');
-    if (typeof second !== 'string') throw new InvalidArgumentException('Bad arguments: Second argument should be a string');
+    if (typeof first !== `string`) throw new InvalidArgumentException(`Bad arguments: First argument should be a string`);
+    if (typeof second !== `string`) throw new InvalidArgumentException(`Bad arguments: Second argument should be a string`);
 
-    first = first.replace(/\s+/g, '');
-    second = second.replace(/\s+/g, '');
+    first = first.replace(/\s+/g, ``);
+    second = second.replace(/\s+/g, ``);
 
     if (first === second) return 1; // identical or empty
     if (first.length < 2 || second.length < 2) return 0; // if either is a 0-letter or 1-letter string
@@ -110,8 +109,8 @@ function compareTwoStrings(first, second) {
  * @returns {foundBestMatchResult}
  * @throws {InvalidArgumentException} if the arguments are not valid.
  */
-function findBestMatch(mainString, targetStrings) {
-    if (!areArgsValid(mainString, targetStrings)) throw new InvalidArgumentException('Bad arguments: First argument should be a string, second should be an array of strings');
+export function findBestMatch(mainString, targetStrings) {
+    if (!areArgsValid(mainString, targetStrings)) throw new InvalidArgumentException(`Bad arguments: First argument should be a string, second should be an array of strings`);
 
     const ratings = [];
     let bestMatchIndex = 0;
@@ -130,4 +129,4 @@ function findBestMatch(mainString, targetStrings) {
     return { ratings: ratings, bestMatch: bestMatch, bestMatchIndex: bestMatchIndex };
 }
 
-module.exports = { findBestMatch, compareTwoStrings };
+export default findBestMatch;
