@@ -28,7 +28,7 @@ import { chunkOptions, downloadPixivImage} from 'annieverseutil';
 
 ### utils
 
-- `chunkOptions(array, size)` – Chunk an array into groups.
+- `chunkOptions` – Chunk an array into groups.
 - `random` – Get a random element from an array
 - `closetBelow` - Get the closest value in an array that is below a specified value
 - `commanifier` - Format a number with commas as thousands separators
