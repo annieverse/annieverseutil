@@ -1,6 +1,7 @@
 import path from 'path';
 import fs from 'fs';
 
+
 /**
  * Downloads an image from a given URL and saves it to the specified output path.
  * @param imgUrl - The image URL to download
@@ -23,7 +24,6 @@ export async function downloadPixivImage(imgUrl: string, output: string): Promis
     };
 
     try {
-        // @ts-ignore: fetch is available in Node 18+
         const response = await fetch(imgUrl, options);
 
         if (!response.ok) {

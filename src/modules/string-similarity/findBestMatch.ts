@@ -1,5 +1,10 @@
 "use strict";
-
+/**
+ * Validates the arguments for the findBestMatch function.
+ * @param mainString The string to find a match for.
+ * @param targetStrings The array of strings to search within.
+ * @returns True if the arguments are valid, false otherwise.
+ */
 function areArgsValid(mainString: string, targetStrings: string[]): boolean {
     if (typeof mainString !== `string`) return false;
     if (!Array.isArray(targetStrings)) return false;
@@ -8,6 +13,9 @@ function areArgsValid(mainString: string, targetStrings: string[]): boolean {
     return true;
 }
 
+/**
+ * Represents an error thrown when invalid arguments are provided.
+ */
 class InvalidArgumentException extends Error {
     constructor(message: string) {
         super(message);
@@ -21,6 +29,12 @@ class InvalidArgumentException extends Error {
     }
 }
 
+/**
+ * Compares two strings and returns a similarity score between 0 and 1.
+ * @param first The first string to compare.
+ * @param second The second string to compare.
+ * @returns A number representing the similarity score.
+ */
 function compareTwoStrings(first: string, second: string): number {
     if (typeof first !== `string`) throw new InvalidArgumentException(`Bad arguments: First argument should be a string`);
     if (typeof second !== `string`) throw new InvalidArgumentException(`Bad arguments: Second argument should be a string`);
@@ -57,17 +71,29 @@ function compareTwoStrings(first: string, second: string): number {
     return (2.0 * intersectionSize) / (first.length + second.length - 2);
 }
 
+/**
+ * Represents the best match found for a given string.
+ */
 interface BestMatch {
     target: string;
     rating: number;
 }
 
+/**
+ * Represents the result of finding the best match for a given string.
+ */
 interface FoundBestMatchResult {
     ratings: Array<{ target: string; rating: number }>;
     bestMatch: BestMatch;
     bestMatchIndex: number;
 }
 
+/**
+ * Finds the best match for a given string within an array of target strings.
+ * @param mainString The string to find a match for.
+ * @param targetStrings The array of strings to search within.
+ * @returns An object containing the ratings for all comparisons, the best match, and its index.
+ */
 function findBestMatch(mainString: string, targetStrings: string[]): FoundBestMatchResult {
     if (!areArgsValid(mainString, targetStrings)) throw new InvalidArgumentException(`Bad arguments: First argument should be a string, second should be an array of strings`);
 

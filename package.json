@@ -30,9 +30,12 @@
     "test:fix": "eslint --fix",
     "jest": "jest --experimental-vm-modules node_modules/.bin/jest ",
     "jest:coverage": "jest --experimental-vm-modules node_modules/.bin/jest --coverage",
-    "patch": "npm run build && npm version patch",
-    "minor": "npm run build && npm version minor",
-    "major": "npm run build && npm version major"
+    "patch:build": "npm run build && npm run patch",
+    "minor:build": "npm run build && npm run minor",
+    "major:build": "npm run build && npm run major",
+    "patch": "npm version patch",
+    "minor": "npm version minor",
+    "major": "npm version major"
   },
   "contributors": [
     "Naph (https://github.com/klerikdust)",
