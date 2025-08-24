@@ -1,4 +1,6 @@
 export default {
+
+    preset: 'ts-jest',
     // Specify test environment
     testEnvironment: `node`,
     // Optionally, specify test file patterns

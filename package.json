@@ -3,7 +3,7 @@
   "version": "0.1.5",
   "description": "A repo designed to house all util functionality for discord bot Annie",
   "license": "MIT",
-  "author": "thefryignpan",
+  "author": "thefryingpan",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.mjs",
   "private": false,
@@ -24,14 +24,16 @@
   "types": "./dist/cjs/index.d.ts",
   "type": "module",
   "scripts": {
-    "build": "npm run build:cjs && npm run build:esm",
-    "build:cjs": "tsc --project .configs/tsconfig.cjs.json",
-    "build:esm": "tsc --project .configs/tsconfig.esm.json",
+    "jest": "jest",
+    "jest:coverage": "jest --coverage",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "patch:build": "npm run build && npm run patch",
     "minor:build": "npm run build && npm run minor",
     "major:build": "npm run build && npm run major",
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc --project .configs/tsconfig.cjs.json",
+    "build:esm": "tsc --project .configs/tsconfig.esm.json",
     "patch": "npm version patch",
     "minor": "npm version minor",
     "major": "npm version major"
@@ -49,6 +51,7 @@
     "eslint-plugin-jsdoc": "^54.1.1",
     "globals": "^16.3.0",
     "jest": "^30.0.5",
+    "ts-jest": "^29.4.1",
     "typescript": "^5.9.2"
   }
 }
