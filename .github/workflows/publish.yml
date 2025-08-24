@@ -67,4 +67,4 @@ jobs:
         if: steps.check.outputs.version_changed == 'false'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release
+        run: npx semantic-release --dry-run
