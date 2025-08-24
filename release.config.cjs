@@ -2,6 +2,7 @@ module.exports = {
     branches: ['main', { name: 'next', prerelease: true }],
     repositoryUrl: 'https://github.com/annieverse/annieverseutil.git',
     plugins: [
+        '@semantic-release/github',
         [
             '@semantic-release/commit-analyzer',
             {
