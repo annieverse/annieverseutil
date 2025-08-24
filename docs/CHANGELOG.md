@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/annieverse/annieverseutil/compare/v1.0.2...v1.0.3) (2025-08-24)
+
+
+### Bug Fixes
+
+* release publish ([a6eafcf](https://github.com/annieverse/annieverseutil/commit/a6eafcf8d9efc3db8f55193af4676619892751b0))
+
 ## [1.0.2](https://github.com/annieverse/annieverseutil/compare/v1.0.1...v1.0.2) (2025-08-24)
 
 
