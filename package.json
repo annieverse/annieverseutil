@@ -1,5 +1,5 @@
 {
-  "name": "annieverseutil",
+  "name": "@annieverse/annieverseutil",
   "version": "0.1.5",
   "description": "A repo designed to house all util functionality for discord bot Annie",
   "license": "MIT",
@@ -36,7 +36,8 @@
     "build:esm": "tsc --project .configs/tsconfig.esm.json",
     "patch": "npm version patch",
     "minor": "npm version minor",
-    "major": "npm version major"
+    "major": "npm version major",
+    "semantic-release": "semantic-release"
   },
   "contributors": [
     "Naph (https://github.com/klerikdust)",
@@ -51,7 +52,15 @@
     "eslint-plugin-jsdoc": "^54.1.1",
     "globals": "^16.3.0",
     "jest": "^30.0.5",
+    "semantic-release": "^24.2.7",
     "ts-jest": "^29.4.1",
     "typescript": "^5.9.2"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
   }
 }

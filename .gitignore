@@ -139,6 +139,6 @@ dist
 #Test Directory
 testDirectory/
 
-
+dist
 .backup/
 .vscode/
