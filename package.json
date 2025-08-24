@@ -36,8 +36,7 @@
     "build:esm": "tsc --project .configs/tsconfig.esm.json",
     "patch": "npm version patch",
     "minor": "npm version minor",
-    "major": "npm version major",
-    "semantic-release": "semantic-release"
+    "major": "npm version major"
   },
   "contributors": [
     "Naph (https://github.com/klerikdust)",
