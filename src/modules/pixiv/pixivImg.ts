@@ -1,6 +1,6 @@
+"use strict"
 import path from 'path';
 import fs from 'fs';
-
 
 /**
  * Downloads an image from a given URL and saves it to the specified output path.

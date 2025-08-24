@@ -1,3 +1,4 @@
+"use strict"
 /**
  * Get the closest value in an array that is below a specified value
  * @param array The array to search
