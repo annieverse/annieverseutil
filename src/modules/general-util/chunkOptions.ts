@@ -1,3 +1,4 @@
+"use strict"
 /**
  * Chunk array into groups of arrays
  * @param array The array to chunk

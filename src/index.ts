@@ -1,3 +1,4 @@
+"use strict"
 import { findBestMatch, compareTwoStrings } from "./modules/string-similarity/findBestMatch";
 import { downloadPixivImage } from "./modules/pixiv/pixivImg";
 import { chunkOptions } from "./modules/general-util/chunkOptions";
