@@ -11,17 +11,17 @@ A repo designed to house all util functionality for Discord bot Annie.
 ## Installation
 
 ```bash
-npm install annieverseutil
+npm install @annieverse/annieverseutil
 ```
 
 ## Usage
 
 ```js
 // CommonJS
-const { chunkOptions, downloadPixivImage } = require('annieverseutil');
+const { chunkOptions, downloadPixivImage } = require('@annieverse/annieverseutil');
 
 // ES Module
-import { chunkOptions, downloadPixivImage} from 'annieverseutil';
+import { chunkOptions, downloadPixivImage} from '@annieverse/annieverseutil';
 ```
 
 ## Modules
