@@ -1,5 +1,7 @@
 [![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
-[website](https://www.annie.gg)
+
+[website](https://www.annie.gg)  
+<sub><sub>Main Discord bot Annie's dashboard</sub></sub>
 
 # annieverseUtil
 
