@@ -1,6 +1,6 @@
 {
   "name": "@annieverse/annieverseutil",
-  "version": "1.0.4",
+  "version": "1.0.4-next",
   "description": "A repo designed to house all util functionality for discord bot Annie",
   "license": "MIT",
   "author": "thefryingpan",
@@ -18,11 +18,10 @@
   "exports": {
     ".": {
       "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.js"
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/cjs/index.d.ts"
     }
   },
-  "types": "./dist/cjs/index.d.ts",
-  "type": "module",
   "scripts": {
     "jest": "jest",
     "jest:coverage": "jest --coverage",
