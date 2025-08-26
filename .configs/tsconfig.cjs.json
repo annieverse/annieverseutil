@@ -3,7 +3,9 @@
     "extends": "./tsconfig.base.json",
     "compilerOptions": {
         "module": "commonjs",
-        "outDir": "../dist/cjs" // Output CJS files to a dedicated directory
+        "moduleResolution": "node",
+        "outDir": "../dist/cjs", // Output CJS files to a dedicated directory
+        // "esModuleInterop": false
     },
     "include": [
         "../src/**/*.ts"
