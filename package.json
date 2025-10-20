@@ -52,7 +52,7 @@
     "eslint-plugin-jsdoc": "^54.1.1",
     "globals": "^16.3.0",
     "jest": "^30.0.5",
-    "semantic-release": "^24.2.7",
+    "semantic-release": "^25.0.1",
     "ts-jest": "^29.4.1",
     "typescript": "^5.9.2"
   },
